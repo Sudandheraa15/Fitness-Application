@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitLife - Your Fitness Companion</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="light-mode">
+
+  <!-- ===== LANDING PAGE ===== -->
+  <div id="landing-section">
+
+    <!-- Navbar -->
+    <nav class="landing-nav">
+      <div class="landing-nav-logo"><i class="fas fa-dumbbell"></i> FitLife</div>
+      <div class="landing-nav-links">
+        <a href="#features">Features</a>
+        <a href="#goals">Goals</a>
+        <a href="#how">How It Works</a>
+      </div>
+      <div class="landing-nav-btns">
+        <button class="btn-nav-login"   onclick="goToLogin()">Login</button>
+        <button class="btn-nav-signup"  onclick="goToRegister()">Get Started</button>
+      </div>
+      <!-- Mobile menu toggle -->
+      <button class="landing-hamburger" onclick="toggleLandingMenu()" id="landing-hamburger">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+    <!-- Mobile dropdown -->
+    <div class="landing-mobile-menu hidden" id="landing-mobile-menu">
+      <a href="#features" onclick="closeLandingMenu()">Features</a>
+      <a href="#goals"    onclick="closeLandingMenu()">Goals</a>
+      <a href="#how"      onclick="closeLandingMenu()">How It Works</a>
+      <button onclick="goToLogin()">Login</button>
+      <button onclick="goToRegister()">Get Started Free</button>
+    </div>
+
+    <!-- Hero -->
+    <section class="landing-hero">
+      <div class="landing-hero-overlay"></div>
+      <div class="landing-hero-content">
+        <span class="hero-tag">🏋️ Your Personal Fitness Companion</span>
+        <h1>Transform Your Body,<br><span class="hero-highlight">Transform Your Life</span></h1>
+        <p>Personalized workouts, Indian diet plans, progress tracking and voice reminders — everything you need to reach your fitness goals.</p>
+        <div class="hero-btns">
+          <button class="btn-hero-primary" onclick="goToRegister()">
+            <i class="fas fa-rocket"></i> Start For Free
+          </button>
+          <button class="btn-hero-secondary" onclick="goToLogin()">
+            <i class="fas fa-sign-in-alt"></i> Sign In
+          </button>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="hero-stat-num">15+</span><span>Workouts</span></div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat"><span class="hero-stat-num">36</span><span>Indian Recipes</span></div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat"><span class="hero-stat-num">3</span><span>Fitness Goals</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="landing-section" id="features">
+      <div class="landing-container">
+        <div class="section-label">Everything You Need</div>
+        <h2 class="section-title">Packed With Powerful Features</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#6c63ff,#5a52d5)">
+              <i class="fas fa-running"></i>
+            </div>
+            <h3>Workout Library</h3>
+            <p>Beginner to advanced exercises with photo guides, timers, and calorie tracking.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#ff6584,#ff4757)">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <h3>Indian Diet Plans</h3>
+            <p>Goal-based meal plans with authentic Indian recipes, macros, and gram measurements.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#43d787,#2ecc71)">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Progress Tracking</h3>
+            <p>Track weight, BMI, calories burned and workouts with beautiful charts.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#00b4d8,#0077b6)">
+              <i class="fas fa-volume-up"></i>
+            </div>
+            <h3>Voice Alarms</h3>
+            <p>Smart voice reminders that speak aloud at meal, workout and water intake times.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#ffc107,#e6a817)">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Workout Timer</h3>
+            <p>Built-in countdown timer with exercise photo overlay and completion sound.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon" style="background:linear-gradient(135deg,#a855f7,#7c3aed)">
+              <i class="fas fa-moon"></i>
+            </div>
+            <h3>Dark Mode</h3>
+            <p>Easy on the eyes with a full dark theme that saves your preference.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Goals -->
+    <section class="landing-section landing-section-alt" id="goals">
+      <div class="landing-container">
+        <div class="section-label">Pick Your Path</div>
+        <h2 class="section-title">Plans For Every Goal</h2>
+        <div class="goals-grid">
+          <div class="goal-card goal-loss">
+            <div class="goal-emoji">🔥</div>
+            <h3>Weight Loss</h3>
+            <p>1500 kcal/day plan with low-calorie Indian meals and cardio-focused workouts.</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Moong Dal Chilla, Khichdi, Tandoori Chicken</li>
+              <li><i class="fas fa-check"></i> Walking, Jogging, HIIT</li>
+              <li><i class="fas fa-check"></i> BMI & weight tracking</li>
+            </ul>
+            <button onclick="goToRegister()" class="goal-btn">Start Losing Weight</button>
+          </div>
+          <div class="goal-card goal-muscle">
+            <div class="goal-emoji">💪</div>
+            <h3>Muscle Gain</h3>
+            <p>2800 kcal/day high-protein plan with strength training and heavy lifts.</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Egg Bhurji, Chicken Curry, Dal Makhani</li>
+              <li><i class="fas fa-check"></i> Pull-ups, Deadlifts, Burpees</li>
+              <li><i class="fas fa-check"></i> Calorie & protein tracking</li>
+            </ul>
+            <button onclick="goToRegister()" class="goal-btn">Start Building Muscle</button>
+          </div>
+          <div class="goal-card goal-maintain">
+            <div class="goal-emoji">⚖️</div>
+            <h3>Maintenance</h3>
+            <p>2000 kcal/day balanced plan to stay fit and healthy with variety.</p>
+            <ul>
+              <li><i class="fas fa-check"></i> Idli Sambar, Biryani, Kadhi Pakora</li>
+              <li><i class="fas fa-check"></i> Mixed cardio & strength</li>
+              <li><i class="fas fa-check"></i> Full progress dashboard</li>
+            </ul>
+            <button onclick="goToRegister()" class="goal-btn">Stay Fit</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="landing-section" id="how">
+      <div class="landing-container">
+        <div class="section-label">Simple Steps</div>
+        <h2 class="section-title">How FitLife Works</h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h3>Create Account</h3>
+            <p>Enter your age, height, weight, and fitness goal to get a personalized plan.</p>
+          </div>
+          <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h3>Follow Your Plan</h3>
+            <p>Do workouts with the built-in timer and eat from your Indian meal plan.</p>
+          </div>
+          <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h3>Track Progress</h3>
+            <p>Log your weight and water intake daily. Watch your charts improve over time.</p>
+          </div>
+          <div class="step-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <h3>Stay Consistent</h3>
+            <p>Voice alarms remind you at every meal, workout and water intake time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="landing-cta">
+      <div class="landing-cta-overlay"></div>
+      <div class="landing-cta-content">
+        <h2>Ready to Start Your Fitness Journey?</h2>
+        <p>Join FitLife today — it's completely free.</p>
+        <button class="btn-hero-primary" onclick="goToRegister()">
+          <i class="fas fa-rocket"></i> Get Started Free
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+      <div class="landing-footer-logo"><i class="fas fa-dumbbell"></i> FitLife</div>
+      <p>Your personal fitness companion for students and beginners.</p>
+      <p class="footer-copy">© 2025 FitLife. Built with ❤️ for a healthier you.</p>
+    </footer>
+
+  </div>
+
+  <!-- ===== AUTH PAGES ===== -->
+  <div id="auth-section" class="hidden">
+
+    <!-- Login Page -->
+    <div id="login-page" class="auth-page login-bg">
+      <div class="auth-overlay"></div>
+      <div class="auth-card">
+        <div class="auth-logo"><i class="fas fa-dumbbell"></i> FitLife</div>
+        <h2>Welcome Back!</h2>
+        <p class="auth-subtitle">Sign in to continue your fitness journey</p>
+        <form id="login-form">
+          <div class="form-group">
+            <label><i class="fas fa-envelope"></i> Email</label>
+            <input type="email" id="login-email" placeholder="Enter your email" required />
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-lock"></i> Password</label>
+            <input type="password" id="login-password" placeholder="Enter your password" required />
+          </div>
+          <div id="login-error" class="error-msg"></div>
+          <button type="submit" class="btn-primary btn-full">
+            <i class="fas fa-sign-in-alt"></i> Sign In
+          </button>
+        </form>
+        <p class="auth-switch">Don't have an account? <a href="#" onclick="showPage('register-page'); return false;">Register here</a></p>
+      </div>
+    </div>
+
+    <!-- Register Page -->
+    <div id="register-page" class="auth-page register-bg hidden">
+      <div class="auth-overlay"></div>
+      <div class="auth-card auth-card-wide">
+        <div class="auth-logo"><i class="fas fa-dumbbell"></i> FitLife</div>
+        <h2>Create Account</h2>
+        <p class="auth-subtitle">Start your fitness journey today</p>
+        <form id="register-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-user"></i> Full Name</label>
+              <input type="text" id="reg-name" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-envelope"></i> Email</label>
+              <input type="email" id="reg-email" placeholder="Your email" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-lock"></i> Password</label>
+              <input type="password" id="reg-password" placeholder="Min 6 characters" required />
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-birthday-cake"></i> Age</label>
+              <input type="number" id="reg-age" placeholder="Your age" min="10" max="100" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-venus-mars"></i> Gender</label>
+              <select id="reg-gender" required>
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-ruler-vertical"></i> Height (cm)</label>
+              <input type="number" id="reg-height" placeholder="e.g. 170" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-weight"></i> Weight (kg)</label>
+              <input type="number" id="reg-weight" placeholder="e.g. 70" required />
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-bullseye"></i> Fitness Goal</label>
+              <select id="reg-goal" required>
+                <option value="">Select goal</option>
+                <option value="weight_loss">Weight Loss</option>
+                <option value="muscle_gain">Muscle Gain</option>
+                <option value="maintenance">Maintenance</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-heartbeat"></i> Health Conditions (optional)</label>
+            <input type="text" id="reg-health" placeholder="e.g. diabetes, hypertension, or None" />
+          </div>
+          <div id="register-error" class="error-msg"></div>
+          <button type="submit" class="btn-primary btn-full">
+            <i class="fas fa-user-plus"></i> Create Account
+          </button>
+        </form>
+        <p class="auth-switch">Already have an account? <a href="#" onclick="showPage('login-page'); return false;">Sign in</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MAIN APP ===== -->
+  <div id="app-section" class="hidden">
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar(false)"></div>
+
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-logo"><i class="fas fa-dumbbell"></i> FitLife</div>
+      <ul class="nav-links">
+        <li><button class="nav-item active" data-page="dashboard"><i class="fas fa-home"></i> Dashboard</button></li>
+        <li><button class="nav-item" data-page="workouts"><i class="fas fa-running"></i> Workouts</button></li>
+        <li><button class="nav-item" data-page="diet"><i class="fas fa-utensils"></i> Diet Plan</button></li>
+        <li><button class="nav-item" data-page="progress"><i class="fas fa-chart-line"></i> Progress</button></li>
+        <li><button class="nav-item" data-page="reminders"><i class="fas fa-bell"></i> Reminders</button></li>
+        <li><button class="nav-item" data-page="profile"><i class="fas fa-user"></i> Profile</button></li>
+        <li><button class="nav-item" data-page="settings"><i class="fas fa-cog"></i> Settings</button></li>
+      </ul>
+      <div class="sidebar-footer">
+        <button onclick="logout()" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </nav>
+
+    <!-- Mobile Header -->
+    <header id="mobile-header">
+      <button id="menu-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+      <span class="mobile-logo"><i class="fas fa-dumbbell"></i> FitLife</span>
+      <button onclick="toggleDarkMode()" class="theme-btn"><i class="fas fa-moon"></i></button>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+      <!-- Dashboard -->
+      <div id="dashboard" class="page active">
+        <div class="page-header dashboard-bg">
+          <div class="page-header-overlay"></div>
+          <div class="page-header-content">
+            <h1>Good Morning, <span id="dash-name">User</span>! 💪</h1>
+            <p>Keep pushing towards your goals!</p>
+          </div>
+        </div>
+        <div class="content-body">
+          <!-- Stats Cards -->
+          <div class="stats-grid">
+            <div class="stat-card calories-card">
+              <div class="stat-icon"><i class="fas fa-fire"></i></div>
+              <div class="stat-info">
+                <span class="stat-value" id="dash-calories">0</span>
+                <span class="stat-label">Calories Burned</span>
+              </div>
+            </div>
+            <div class="stat-card workout-card">
+              <div class="stat-icon"><i class="fas fa-dumbbell"></i></div>
+              <div class="stat-info">
+                <span class="stat-value" id="dash-workouts">0</span>
+                <span class="stat-label">Workouts Done</span>
+              </div>
+            </div>
+            <div class="stat-card water-card">
+              <div class="stat-icon"><i class="fas fa-tint"></i></div>
+              <div class="stat-info">
+                <span class="stat-value" id="dash-water">0</span>
+                <span class="stat-label">Glasses of Water</span>
+              </div>
+            </div>
+            <div class="stat-card bmi-card">
+              <div class="stat-icon"><i class="fas fa-weight"></i></div>
+              <div class="stat-info">
+                <span class="stat-value" id="dash-bmi">--</span>
+                <span class="stat-label">BMI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Water Tracker -->
+          <div class="card">
+            <h3><i class="fas fa-tint"></i> Water Intake Tracker</h3>
+            <div class="water-tracker">
+              <div class="water-glasses" id="water-glasses"></div>
+              <button class="btn-secondary" onclick="addWater()"><i class="fas fa-plus"></i> Add Glass</button>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="card">
+            <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+            <div class="quick-actions">
+              <button class="quick-btn" onclick="navigateTo('workouts')"><i class="fas fa-running"></i> Start Workout</button>
+              <button class="quick-btn" onclick="navigateTo('diet')"><i class="fas fa-utensils"></i> View Meal Plan</button>
+              <button class="quick-btn" onclick="navigateTo('progress')"><i class="fas fa-chart-line"></i> Log Progress</button>
+            </div>
+          </div>
+
+          <!-- Profile Summary -->
+          <div class="card">
+            <h3><i class="fas fa-user"></i> Profile Summary</h3>
+            <div class="profile-summary" id="profile-summary"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workouts Page -->
+      <div id="workouts" class="page hidden">
+        <div class="page-header workout-header-bg">
+          <div class="page-header-overlay"></div>
+          <div class="page-header-content">
+            <h1><i class="fas fa-running"></i> Workout Library</h1>
+            <p>Choose your level and start training</p>
+          </div>
+        </div>
+        <div class="content-body">
+          <div class="level-tabs">
+            <button class="tab-btn active" onclick="loadWorkouts('beginner', this)">🟢 Beginner</button>
+            <button class="tab-btn" onclick="loadWorkouts('intermediate', this)">🟡 Intermediate</button>
+            <button class="tab-btn" onclick="loadWorkouts('advanced', this)">🔴 Advanced</button>
+          </div>
+          <div id="workout-list" class="workout-grid"></div>
+        </div>
+      </div>
+
+      <!-- Diet Page -->
+      <div id="diet" class="page hidden">
+        <div class="page-header diet-header-bg">
+          <div class="page-header-overlay"></div>
+          <div class="page-header-content">
+            <h1><i class="fas fa-utensils"></i> Diet Plan</h1>
+            <p>Personalized nutrition for your goals</p>
+          </div>
+        </div>
+        <div class="content-body">
+          <div id="diet-summary" class="diet-summary-card"></div>
+          <div class="meal-tabs">
+            <button class="tab-btn active" onclick="showMeal('breakfast', this)">🌅 Breakfast</button>
+            <button class="tab-btn" onclick="showMeal('lunch', this)">☀️ Lunch</button>
+            <button class="tab-btn" onclick="showMeal('dinner', this)">🌙 Dinner</button>
+            <button class="tab-btn" onclick="showMeal('snacks', this)">🍎 Snacks</button>
+          </div>
+          <div id="meal-list" class="meal-grid"></div>
+        </div>
+      </div>
+
+      <!-- Progress Page -->
+      <div id="progress" class="page hidden">
+        <div class="page-header progress-header-bg">
+          <div class="page-header-overlay"></div>
+          <div class="page-header-content">
+            <h1><i class="fas fa-chart-line"></i> Progress Tracker</h1>
+            <p>Track your fitness journey</p>
+          </div>
+        </div>
+        <div class="content-body">
+          <div class="card">
+            <h3><i class="fas fa-weight"></i> Log Today's Stats</h3>
+            <div class="log-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Weight (kg)</label>
+                  <input type="number" id="log-weight" placeholder="e.g. 70.5" step="0.1" />
+                </div>
+                <div class="form-group">
+                  <label>Water Glasses</label>
+                  <input type="number" id="log-water" placeholder="e.g. 8" min="0" max="20" />
+                </div>
+              </div>
+              <button class="btn-primary" onclick="logProgress()"><i class="fas fa-save"></i> Save Progress</button>
+            </div>
+          </div>
+          <div class="charts-grid">
+            <div class="card">
+              <h3><i class="fas fa-weight"></i> Weight History</h3>
+              <canvas id="weightChart"></canvas>
+            </div>
+            <div class="card">
+              <h3><i class="fas fa-fire"></i> Calories Burned</h3>
+              <canvas id="caloriesChart"></canvas>
+            </div>
+            <div class="card">
+              <h3><i class="fas fa-dumbbell"></i> Workouts Per Day</h3>
+              <canvas id="workoutChart"></canvas>
+            </div>
+            <div class="card">
+              <h3><i class="fas fa-calculator"></i> BMI Trend</h3>
+              <canvas id="bmiChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reminders Page -->
+      <div id="reminders" class="page hidden">
+        <div class="page-header reminder-header-bg">
+          <div class="page-header-overlay"></div>
+          <div class="page-header-content">
+            <h1><i class="fas fa-bell"></i> Reminders</h1>
+            <p>Stay on track with your routine</p>
+          </div>
+        </div>
+        <div class="content-body">
+
+          <!-- Alarm master switch -->
+          <div class="card alarm-master-card">
+            <div class="alarm-master-info">
+              <div class="alarm-master-icon"><i class="fas fa-volume-up"></i></div>
+              <div>
+                <strong>Voice Alarms</strong>
+                <p>Speak aloud when it's time for each schedule item</p>
+                <span class="alarm-status-badge" id="alarm-status-badge">OFF</span>
+              </div>
+            </div>
+            <button class="btn-alarm-toggle" id="btn-alarm-toggle" onclick="toggleVoiceAlarms()">
+              <i class="fas fa-bell-slash" id="alarm-toggle-icon"></i>
+              <span id="alarm-toggle-label">Enable Alarms</span>
+            </button>
+          </div>
+
+          <div class="card">
+            <h3>Notification Settings</h3>
+            <div class="reminder-list">
+              <div class="reminder-item">
+                <div class="reminder-info">
+                  <i class="fas fa-running reminder-icon workout-icon"></i>
+                  <div>
+                    <strong>Workout Reminder</strong>
+                    <p>Daily reminder to complete your workout</p>
+                  </div>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="workout-reminder" onchange="updateReminder()">
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="reminder-item">
+                <div class="reminder-info">
+                  <i class="fas fa-tint reminder-icon water-icon"></i>
+                  <div>
+                    <strong>Water Intake Reminder</strong>
+                    <p>Reminder to drink water every 2 hours</p>
+                  </div>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="water-reminder" onchange="updateReminder()">
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="reminder-item">
+                <div class="reminder-info">
+                  <i class="fas fa-utensils reminder-icon meal-icon"></i>
+                  <div>
+                    <strong>Meal Notification</strong>
+                    <p>Reminder for breakfast, lunch, and dinner</p>
+                  </div>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="meal-reminder" onchange="updateReminder()">
+                  <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3><i class="fas fa-clock"></i> Today's Schedule</h3>
+            <p class="schedule-hint">Voice alarm fires automatically at each time below when alarms are enabled.</p>
+            <div class="schedule-list" id="schedule-list">
+              <div class="schedule-item" data-hour="7"  data-min="0"  data-type="meal"    data-msg="Good morning! It is 7 AM. Time for breakfast. Start your day with a healthy meal.">
+                <span class="time">7:00 AM</span><span class="schedule-label">🌅 Breakfast Time</span>
+                <span class="alarm-dot" id="alarm-dot-700"></span>
+              </div>
+              <div class="schedule-item" data-hour="9"  data-min="0"  data-type="workout" data-msg="Good morning! It is 9 AM. Time for your morning workout. Let's get moving!">
+                <span class="time">9:00 AM</span><span class="schedule-label">💪 Morning Workout</span>
+                <span class="alarm-dot" id="alarm-dot-900"></span>
+              </div>
+              <div class="schedule-item" data-hour="11" data-min="0"  data-type="water"   data-msg="It is 11 AM. Time to drink water. Stay hydrated and keep going!">
+                <span class="time">11:00 AM</span><span class="schedule-label">💧 Drink Water</span>
+                <span class="alarm-dot" id="alarm-dot-1100"></span>
+              </div>
+              <div class="schedule-item" data-hour="13" data-min="0"  data-type="meal"    data-msg="It is 1 PM. Lunch time! Eat a balanced meal to fuel your afternoon.">
+                <span class="time">1:00 PM</span><span class="schedule-label">🥗 Lunch Time</span>
+                <span class="alarm-dot" id="alarm-dot-1300"></span>
+              </div>
+              <div class="schedule-item" data-hour="15" data-min="0"  data-type="water"   data-msg="It is 3 PM. Drink a glass of water now. Hydration keeps you energized!">
+                <span class="time">3:00 PM</span><span class="schedule-label">💧 Drink Water</span>
+                <span class="alarm-dot" id="alarm-dot-1500"></span>
+              </div>
+              <div class="schedule-item" data-hour="17" data-min="0"  data-type="workout" data-msg="It is 5 PM. Time for your evening workout. Push yourself today!">
+                <span class="time">5:00 PM</span><span class="schedule-label">🏃 Evening Workout</span>
+                <span class="alarm-dot" id="alarm-dot-1700"></span>
+              </div>
+              <div class="schedule-item" data-hour="19" data-min="0"  data-type="meal"    data-msg="It is 7 PM. Dinner time! Have a light and nutritious dinner.">
+                <span class="time">7:00 PM</span><span class="schedule-label">🌙 Dinner Time</span>
+                <span class="alarm-dot" id="alarm-dot-1900"></span>
+              </div>
+              <div class="schedule-item" data-hour="21" data-min="0"  data-type="water"   data-msg="It is 9 PM. Drink your final glass of water for today. Great job staying on track!">
+                <span class="time">9:00 PM</span><span class="schedule-label">💧 Final Water Intake</span>
+                <span class="alarm-dot" id="alarm-dot-2100"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Profile Page -->
+      <div id="profile" class="page hidden">
+        <div class="page-header profile-header-bg">
+          <div class="page-header-overlay"></div>
+          <div class="page-header-content">
+            <h1><i class="fas fa-user"></i> My Profile</h1>
+            <p>Manage your personal information</p>
+          </div>
+        </div>
+        <div class="content-body">
+          <div class="card">
+            <div class="profile-avatar-section">
+              <div class="avatar-circle" id="profile-avatar"></div>
+              <div>
+                <h2 id="profile-name-display">--</h2>
+                <p id="profile-goal-display" class="goal-badge"></p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-edit"></i> Edit Profile</h3>
+            <form id="profile-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" id="prof-name" required />
+                </div>
+                <div class="form-group">
+                  <label>Age</label>
+                  <input type="number" id="prof-age" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Gender</label>
+                  <select id="prof-gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Height (cm)</label>
+                  <input type="number" id="prof-height" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Weight (kg)</label>
+                  <input type="number" id="prof-weight" required />
+                </div>
+                <div class="form-group">
+                  <label>Fitness Goal</label>
+                  <select id="prof-goal">
+                    <option value="weight_loss">Weight Loss</option>
+                    <option value="muscle_gain">Muscle Gain</option>
+                    <option value="maintenance">Maintenance</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Health Conditions</label>
+                <input type="text" id="prof-health" placeholder="e.g. None" />
+              </div>
+              <div id="profile-msg" class="success-msg"></div>
+              <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings Page -->
+      <div id="settings" class="page hidden">
+        <div class="page-header settings-header-bg">
+          <div class="page-header-overlay"></div>
+          <div class="page-header-content">
+            <h1><i class="fas fa-cog"></i> Settings</h1>
+            <p>Customize your experience</p>
+          </div>
+        </div>
+        <div class="content-body">
+          <div class="card">
+            <h3><i class="fas fa-palette"></i> Appearance</h3>
+            <div class="setting-item">
+              <div>
+                <strong>Dark Mode</strong>
+                <p>Switch between light and dark theme</p>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" id="dark-mode-toggle" onchange="toggleDarkMode()">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+          <div class="card">
+            <h3><i class="fas fa-info-circle"></i> App Info</h3>
+            <div class="info-list">
+              <div class="info-item"><span>Version</span><span>1.0.0</span></div>
+              <div class="info-item"><span>Developer</span><span>FitLife Team</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <button onclick="logout()" class="btn-danger btn-full"><i class="fas fa-sign-out-alt"></i> Logout</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- SVG gradient defs for timer ring -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <linearGradient id="timerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#6c63ff"/>
+        <stop offset="100%" style="stop-color:#43d787"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ===== WORKOUT MODAL ===== -->
+  <div id="workout-modal" class="wmodal-overlay hidden" onclick="closeWorkoutModal(event)">
+    <div class="wmodal-card">
+      <button class="wmodal-close" onclick="closeWorkoutModal()">&times;</button>
+
+      <!-- Hero image banner -->
+      <div class="wmodal-hero" id="wmodal-hero">
+        <div class="wmodal-hero-overlay"></div>
+        <span id="wmodal-badge" class="workout-badge"></span>
+      </div>
+
+      <div class="wmodal-body">
+        <h2 id="wmodal-name"></h2>
+        <div class="wmodal-meta" id="wmodal-meta"></div>
+        <div class="wmodal-instructions" id="wmodal-instructions"></div>
+
+        <!-- Pre-start view -->
+        <div id="wmodal-prestart">
+          <button class="btn-start-workout" onclick="startCountdown()">
+            <i class="fas fa-play"></i> Start Workout
+          </button>
+        </div>
+
+        <!-- Countdown view -->
+        <div id="wmodal-timer" class="hidden">
+          <!-- Workout image shown during timer -->
+          <div class="wmodal-timer-img" id="wmodal-timer-img">
+            <div class="wmodal-timer-img-overlay"></div>
+            <div class="timer-ring-wrap">
+              <svg class="timer-ring" viewBox="0 0 120 120">
+                <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="52"/>
+              </svg>
+              <div class="timer-display">
+                <span id="timer-mm">00</span>:<span id="timer-ss">00</span>
+              </div>
+            </div>
+          </div>
+          <p class="timer-label" id="timer-label">Get ready!</p>
+          <div class="timer-btns">
+            <button class="btn-timer-pause" id="btn-pause" onclick="togglePause()">
+              <i class="fas fa-pause"></i> Pause
+            </button>
+            <button class="btn-timer-stop" onclick="stopTimer()">
+              <i class="fas fa-stop"></i> Stop
+            </button>
+          </div>
+        </div>
+
+        <!-- Done view -->
+        <div id="wmodal-done" class="hidden">
+          <div class="done-anim">🎉</div>
+          <h3>Workout Complete!</h3>
+          <p id="wmodal-done-msg"></p>
+          <button class="btn-primary btn-full" onclick="closeWorkoutModal()">
+            <i class="fas fa-check"></i> Awesome!
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Voice Alarm Popup -->
+  <div id="alarm-popup" class="alarm-popup hidden">
+    <div class="alarm-popup-icon" id="alarm-popup-icon">🔔</div>
+    <div class="alarm-popup-body">
+      <div class="alarm-popup-title" id="alarm-popup-title">Reminder</div>
+      <div class="alarm-popup-msg"  id="alarm-popup-msg"></div>
+    </div>
+    <button class="alarm-popup-close" onclick="dismissAlarm()"><i class="fas fa-times"></i></button>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
